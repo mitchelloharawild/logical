@@ -2,6 +2,7 @@
 
 S3method(knit_print,truth_df)
 S3method(tbl_sum,truth_df)
+export("%=>%")
 export("%>%")
 export(truth_table)
 import(rlang)

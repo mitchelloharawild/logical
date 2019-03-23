@@ -2,13 +2,16 @@
 % Please edit documentation in R/ops.R
 \name{\%=>\%}
 \alias{\%=>\%}
-\title{Material implication}
+\alias{\%iff\%}
+\title{Logical symbols}
 \usage{
 p \%=>\% q
+
+p \%iff\% q
 }
 \arguments{
-\item{p, q}{Material implication of p=>q.}
+\item{p, q}{Logical inputs}
 }
 \description{
-Material implication
+Logical symbols
 }

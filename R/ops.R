@@ -1,9 +1,15 @@
-#' Material implication
+#' Logical symbols
 #'
-#' @param p,q Material implication of p=>q.
+#' @param p,q Logical inputs
 #'
-#' @rdname implication
+#' @rdname ops
 #' @export
 `%=>%` <- function(p, q){
   !p | q
+}
+
+#' @rdname ops
+#' @export
+`%iff%` <- function(p, q){
+  (p&q)|(!p&!q)
 }

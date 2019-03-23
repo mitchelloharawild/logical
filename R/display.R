@@ -11,11 +11,11 @@ tbl_sum.truth_df <- function(x){
 knit_print.truth_df <- function(x, ...){
   if(knitr::is_latex_output()){
     colnames(x) <- convert_symbolic(colnames(x), output = "tex")
-    knitr::knit_print(knitr::kable(x))
   }
   else{
-    abort("Displaying truth tables outside of LaTeX is not yet supported.")
+    colnames(x) <- convert_symbolic(colnames(x), output = "unicode")
   }
+  knitr::knit_print(knitr::kable(x))
 }
 
 symbols <- list(

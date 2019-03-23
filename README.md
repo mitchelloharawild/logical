@@ -22,9 +22,9 @@ library(logical)
 truth_table(c("p", "q"), p | q, p & q, p %=>% q, (p | q) %iff% (p & q))
 ```
 
-| p     | q     | p ∨ q | p ∧ q | p ⇒ q | (p ∨ q) ⇔ (p ∧ q) |
-| :---- | :---- | :---- | :---- | :---- | :---------------- |
-| TRUE  | TRUE  | TRUE  | TRUE  | TRUE  | TRUE              |
-| FALSE | TRUE  | TRUE  | FALSE | TRUE  | FALSE             |
-| TRUE  | FALSE | TRUE  | FALSE | FALSE | FALSE             |
-| FALSE | FALSE | FALSE | FALSE | TRUE  | TRUE              |
+|   p   |   q   | p ∨ q | p ∧ q | p ⇒ q | (p ∨ q) ⇔ (p ∧ q) |
+| :---: | :---: | :---: | :---: | :---: | :---------------: |
+| TRUE  | TRUE  | TRUE  | TRUE  | TRUE  |       TRUE        |
+| FALSE | TRUE  | TRUE  | FALSE | TRUE  |       FALSE       |
+| TRUE  | FALSE | TRUE  | FALSE | FALSE |       FALSE       |
+| FALSE | FALSE | FALSE | FALSE | TRUE  |       TRUE        |

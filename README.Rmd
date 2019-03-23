@@ -18,7 +18,7 @@ The **logical** package makes it easy to compute and display truth tables.
 
 ## Installation
 
-You can install the development version of logical from [GitHub](https://github.com/mitchelloharawild/logical) with:
+You can install the development version of logical from [GitHub](https://github.com/mitchelloharawild/logical) with: 
 
 ``` r
 remotes::install_github("mitchelloharawild/logical")

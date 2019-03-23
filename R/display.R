@@ -15,7 +15,7 @@ knit_print.truth_df <- function(x, ...){
   else{
     colnames(x) <- convert_symbolic(colnames(x), output = "unicode")
   }
-  knitr::knit_print(knitr::kable(x))
+  knitr::knit_print(knitr::kable(x, align = "c"))
 }
 
 symbols <- list(

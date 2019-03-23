@@ -10,7 +10,7 @@ tbl_sum.truth_df <- function(x){
 #' @export
 knit_print.truth_df <- function(x, ...){
   if(knitr::is_latex_output()){
-    colnames(x) <- paste0("$", convert_symbolic(colnames(x), output = "tex"), "$")
+    colnames(x) <- convert_symbolic(colnames(x), output = "tex")
     knitr::knit_print(knitr::kable(x))
   }
   else{
@@ -21,13 +21,19 @@ knit_print.truth_df <- function(x, ...){
 symbols <- list(
   list(code = "%=>%", tex = "{\\Rightarrow}", unicode = "\U21D2"),
   list(code = "%iff%", tex = "{\\Leftrightarrow}", unicode = "\U21D4"),
-  list(code = "!", tex = "{\\lnot}", unicode = "\U00AC")
+  list(code = "!", tex = "{\\lnot}", unicode = "\U00AC"),
+  list(code = "&", tex = "{\\wedge}", unicode = "\U2227"),
+  list(code = "|", tex = "{\\lor}", unicode = "\U2228")
 )
 
 #' @export
 convert_symbolic <- function(x, output = c("code", "tex", "unicode")){
   output <- match.arg(output)
-  reduce(symbols, function(x, replacement){
+  out <- reduce(symbols, function(x, replacement){
     gsub(replacement$code, replacement[[output]], x, fixed = TRUE)
   }, .init = x)
+  if(output == "tex"){
+    out <- paste0("$", out, "$")
+  }
+  knitr::asis_output(out)
 }
